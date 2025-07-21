@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nadlyn - SkinPetra IPL Landing Page
 
-## Getting Started
+A high-performance, conversion-optimized landing page for SkinPetra IPL hair removal device built with Next.js 15, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
+
+- **Responsive Design**: Optimized for mobile, tablet, and desktop
+- **Performance Optimized**: Image optimization, lazy loading, and efficient bundling
+- **SEO Ready**: Complete metadata and Open Graph tags
+- **Interactive Elements**: 3D card stacks, smooth animations with Framer Motion
+- **WhatsApp Integration**: Direct ordering through WhatsApp
+- **Modern UI**: Beautiful gradients, animations, and professional design
+
+## 🛠 Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React + React Icons
+- **Image Optimization**: Next.js Image component
+- **Deployment**: Vercel
+
+## 📱 WhatsApp Integration
+
+WhatsApp orders are sent to: **+212 641 526 218**
+
+The system automatically includes:
+- Product color selection
+- Quantity
+- Pre-formatted message in French
+
+## 🚀 Quick Start
+
+### Development
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Build for production
+npm run build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Test production build locally
+npm start
+```
 
-## Learn More
+## 🔧 Performance Optimizations
 
-To learn more about Next.js, take a look at the following resources:
+- **Image Optimization**: WebP/AVIF format support
+- **Code Splitting**: Automatic bundle optimization
+- **Compression**: Gzip compression enabled
+- **Caching**: Static asset caching for 1 year
+- **Security Headers**: XSS protection and content security
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Deployment to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Automatic Deployment (Recommended)
 
-## Deploy on Vercel
+1. Push code to GitHub/GitLab
+2. Connect repository to Vercel
+3. Vercel will automatically deploy on push
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Manual Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+## 🔐 Security Features
+
+- XSS Protection
+- Content Type Protection
+- Frame Options Security
+- Secure Referrer Policy
+
+## 📊 Performance Metrics
+
+- **First Load JS**: ~183KB (optimized)
+- **Static Generation**: Pre-rendered for best performance
+- **Image Formats**: WebP/AVIF support
+- **Responsive Images**: Multiple sizes for different devices
+
+## 🎨 Brand Colors
+
+- **Primary**: #E1218F (Magenta)
+- **Secondary**: Neutral grays
+- **Accent**: Gold gradients
+- **Background**: Warm beige tones
+
+## 📁 Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router
+├── components/          # React components
+│   ├── sections/       # Page sections
+│   └── ui/             # Reusable UI components
+├── lib/                # Utilities and content
+└── styles/             # Global styles
+```
+
+## 🔍 SEO Optimization
+
+- Complete metadata configuration
+- Open Graph tags for social sharing
+- Twitter Card support
+- Structured data ready
+- Sitemap generation
+- French language optimization
+
+## ✅ Ready for Production
+
+The website has been optimized and is ready for deployment:
+
+- ✅ Build passes without errors
+- ✅ No ESLint warnings
+- ✅ Performance optimized
+- ✅ SEO metadata complete
+- ✅ WhatsApp integration working
+- ✅ All images optimized
+- ✅ Security headers configured
+- ✅ Vercel deployment ready
+
+## 📞 Contact & Support
+
+- **WhatsApp**: +212 641 526 218
+- **Brand**: Nadlyn
+- **Product**: SkinPetra IPL
+
+---
+
+Built with ❤️ in Morocco for Nadlyn
