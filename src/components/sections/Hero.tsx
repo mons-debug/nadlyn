@@ -6,9 +6,9 @@ import AnimatedSection from "../AnimatedSection";
 import { motion, AnimatePresence } from "framer-motion";
 import { hero } from "@/lib/skinpetra-content";
 import WhatsAppButton from "../WhatsAppButton";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo, memo } from "react";
 
-export default function Hero() {
+function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const benefits = [
@@ -17,20 +17,20 @@ export default function Hero() {
     { icon: Clock, text: "Séances de 10 minutes seulement" }
   ];
 
-  const productImages = [
+  const productImages = useMemo(() => [
     { src: "/ChatGPT Image Jul 21, 2025, 11_42_19 PM.png", alt: "SkinPetra IPL Lifestyle" },
     { src: "/ChatGPT Image Jul 21, 2025, 11_44_21 PM.png", alt: "SkinPetra IPL Product" },
     { src: hero.img, alt: hero.imgAlt }
-  ];
+  ], []);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % productImages.length);
-    }, 3000);
+    }, 4000); // Increased from 3000 to 4000ms for smoother experience
     return () => clearInterval(timer);
   }, [productImages.length]);
 
-  const calculateCardStyle = (index: number) => {
+  const calculateCardStyle = useCallback((index: number) => {
     const diff = (index - currentIndex + productImages.length) % productImages.length;
     const isActive = diff === 0;
     
@@ -38,8 +38,13 @@ export default function Hero() {
       zIndex: isActive ? 10 : 1,
       transform: isActive ? "scale(1)" : "scale(0.95)",
       opacity: isActive ? 1 : 0.3,
+      willChange: 'transform, opacity', // Performance optimization
     };
-  };
+  }, [currentIndex, productImages.length]);
+
+  const handleCardClick = useCallback((index: number) => {
+    setCurrentIndex(index);
+  }, []);
 
   return (
     <section className="min-h-screen flex flex-col bg-beige py-6 lg:py-20">
@@ -69,9 +74,9 @@ export default function Hero() {
             <AnimatedSection>
               <motion.h1 
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-neutral-900 mb-4 lg:mb-6"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <span className="text-primary">{hero.title.split('–')[0]}</span>
                 <br />
@@ -196,9 +201,9 @@ export default function Hero() {
             <AnimatedSection>
               <motion.div
                 className="relative w-full max-w-xs sm:max-w-sm mx-auto lg:max-w-md h-[300px] sm:h-[400px] lg:h-[500px]"
-                initial={{ scale: 0.8, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 1 }}
+                transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
               >
                 <div className="relative w-full h-full">
                   <AnimatePresence>
@@ -208,19 +213,24 @@ export default function Hero() {
                         className="absolute inset-0 cursor-pointer"
                         style={{
                           ...calculateCardStyle(index),
-                          transition: "all 0.5s ease-out",
+                          transition: "all 0.3s ease-out", // Reduced from 0.5s to 0.3s
                         }}
-                        onClick={() => setCurrentIndex(index)}
-                        whileHover={{ scale: index === currentIndex ? 1.02 : 1 }}
+                        onClick={() => handleCardClick(index)}
+                        whileHover={{ 
+                          scale: index === currentIndex ? 1.01 : 1, // Reduced hover effect
+                          transition: { duration: 0.2 } // Faster hover transition
+                        }}
                       >
-                        <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-white">
+                        <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-xl bg-white">
                           <Image
                             src={image.src}
                             alt={image.alt}
                             fill
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            priority={index === currentIndex}
+                            priority={index === 0} // Only prioritize first image
+                            loading={index === 0 ? "eager" : "lazy"} // Optimize loading
+                            quality={85} // Slightly reduce quality for performance
                           />
                         </div>
                       </motion.div>
@@ -236,7 +246,7 @@ export default function Hero() {
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         index === currentIndex ? "bg-primary w-4" : "bg-primary/30"
                       }`}
-                      onClick={() => setCurrentIndex(index)}
+                      onClick={() => handleCardClick(index)}
                     />
                   ))}
                 </div>
@@ -247,4 +257,6 @@ export default function Hero() {
       </div>
     </section>
   );
-} 
+}
+
+export default memo(Hero); 
