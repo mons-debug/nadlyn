@@ -34,15 +34,10 @@ export default function Hero() {
     const diff = (index - currentIndex + productImages.length) % productImages.length;
     const isActive = diff === 0;
     
-    // Create a stack effect with bigger background cards showing their sides
-    const stackPosition = diff === 0 ? 0 : diff;
-    
     return {
-      zIndex: productImages.length - stackPosition,
-      transform: isActive
-        ? "scale(1) translateY(0) translateX(0) rotateY(0deg)"
-        : `scale(1.02) translateY(${stackPosition * 0.5}rem) translateX(${stackPosition * 0.8}rem) rotateY(${stackPosition * 2}deg)`,
-      opacity: isActive ? 1 : Math.max(0.85 - stackPosition * 0.1, 0.6),
+      zIndex: isActive ? 10 : 1,
+      transform: isActive ? "scale(1)" : "scale(0.95)",
+      opacity: isActive ? 1 : 0.3,
     };
   };
 
@@ -205,7 +200,7 @@ export default function Hero() {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 1 }}
               >
-                <div className="relative w-full h-full" style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
+                <div className="relative w-full h-full">
                   <AnimatePresence>
                     {productImages.map((image, index) => (
                       <motion.div
@@ -218,11 +213,7 @@ export default function Hero() {
                         onClick={() => setCurrentIndex(index)}
                         whileHover={{ scale: index === currentIndex ? 1.02 : 1 }}
                       >
-                        <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-white border border-white/20"
-                             style={{ 
-                               transformStyle: 'preserve-3d',
-                               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
-                             }}>
+                        <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-white">
                           <Image
                             src={image.src}
                             alt={image.alt}
