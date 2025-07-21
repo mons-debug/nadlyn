@@ -195,7 +195,7 @@ export default function Hero() {
             
             <AnimatedSection>
               <motion.div
-                className="relative w-full max-w-xs sm:max-w-sm mx-auto lg:max-w-lg h-[300px] sm:h-[400px] lg:h-[600px]"
+                className="relative w-full max-w-xs sm:max-w-sm mx-auto lg:max-w-md h-[300px] sm:h-[400px] lg:h-[500px]"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 1 }}
