@@ -8,8 +8,13 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
+    <footer className="bg-gradient-to-br from-luxury-dark via-charcoal to-black text-white py-20 relative overflow-hidden">
+      {/* Luxury background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Brand */}
           <motion.div
@@ -19,7 +24,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <motion.div
-              className="flex items-center gap-3 mb-6"
+              className="flex items-center gap-3 mb-8"
               whileHover={{ scale: 1.02 }}
             >
               <Image
@@ -27,27 +32,29 @@ export default function Footer() {
                 alt="Nadlyn Logo"
                 width={150}
                 height={35}
-                className="h-8 w-auto"
+                className="h-10 w-auto filter brightness-0 invert"
               />
-              <span className="text-xl font-medium text-gray-300">×</span>
-              <h3 className="text-2xl font-bold">SkinPetra IPL</h3>
+              <span className="text-xl font-light text-luxury-gold">×</span>
+              <h3 className="text-3xl font-bold bg-gradient-to-r from-luxury-gold to-yellow-400 bg-clip-text text-transparent">
+                SkinPetra IPL
+              </h3>
             </motion.div>
             
-            <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
+            <p className="text-gray-300 mb-8 leading-relaxed max-w-md text-lg font-light">
               La révolution de l&apos;épilation à domicile. Une technologie professionnelle 
               pour des résultats durables, dans le confort de votre foyer.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-                              <motion.a
+              <motion.a
                 href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 rounded-2xl transition-colors font-semibold"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-luxury-gold to-yellow-500 hover:from-yellow-500 hover:to-luxury-gold text-black rounded-full transition-all duration-300 font-semibold text-lg shadow-2xl border border-luxury-gold/20"
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.3)" }}
+                whileTap={{ scale: 0.98 }}
               >
-                <FaWhatsapp size={18} />
+                <FaWhatsapp size={20} />
                 Contacter sur WhatsApp
               </motion.a>
             </div>

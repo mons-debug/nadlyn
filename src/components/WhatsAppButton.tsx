@@ -24,13 +24,20 @@ export default function WhatsAppButton({
       href={waLink(color, quantity)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#25D366] hover:bg-[#1ebe59] text-white font-semibold rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl min-h-[48px] focus:ring-4 focus:ring-green-300 ${className}`}
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
+      className={`inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#25D366] via-[#20b358] to-[#1ca04a] hover:from-[#1ca04a] hover:via-[#20b358] hover:to-[#25D366] text-white font-semibold rounded-full transition-all duration-500 shadow-2xl hover:shadow-[0_20px_40px_rgba(37,211,102,0.4)] min-h-[52px] focus:ring-4 focus:ring-[#25D366]/30 border border-[#25D366]/20 backdrop-blur-sm ${className}`}
+      whileHover={{ 
+        scale: 1.05, 
+        y: -2,
+        boxShadow: "0 25px 50px rgba(37, 211, 102, 0.5)"
+      }}
+      whileTap={{ scale: 0.98 }}
       aria-label="Contacter par WhatsApp pour commander SkinPetra IPL"
     >
-      {showIcon && <FaWhatsapp className="w-5 h-5" />}
-      {children}
+      {showIcon && <FaWhatsapp className="w-6 h-6" />}
+      <span className="font-semibold text-lg tracking-wide">{children}</span>
+      
+      {/* Luxury shine effect */}
+      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
     </motion.a>
   );
 } 

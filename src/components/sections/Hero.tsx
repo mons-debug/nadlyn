@@ -73,29 +73,29 @@ function Hero() {
           <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left">
             <AnimatedSection>
               <motion.h1 
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-neutral-900 mb-4 lg:mb-6"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-luxury-dark mb-4 lg:mb-6"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <span className="text-primary">SkinPetra IPL</span>
+                <span className="text-primary">{hero.title.split('–')[0]}</span>
                 <br />
                 <span className="text-2xl sm:text-3xl lg:text-5xl font-medium mt-3 block">
-                  Révolutionnaire
+                  {hero.title.split('–')[1]}
                 </span>
               </motion.h1>
             </AnimatedSection>
             
             <AnimatedSection delay={0.1}>
               <motion.p 
-                className="text-base sm:text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
+                className="text-base sm:text-lg lg:text-xl text-charcoal leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                Adieu aux poils indésirables pour toujours !
+                {hero.tagline}
               </motion.p>
             </AnimatedSection>
 
@@ -130,7 +130,7 @@ function Hero() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                       <benefit.icon size={16} className="text-white" />
                     </div>
-                    <span className="text-sm font-medium text-neutral-800">{benefit.text}</span>
+                    <span className="text-sm font-medium text-luxury-dark">{benefit.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -153,7 +153,7 @@ function Hero() {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                       <benefit.icon size={12} className="text-white" />
                     </div>
-                    <span className="text-xs font-medium text-neutral-800">{benefit.text}</span>
+                    <span className="text-xs font-medium text-luxury-dark">{benefit.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
