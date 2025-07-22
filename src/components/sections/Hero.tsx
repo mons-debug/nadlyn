@@ -3,7 +3,7 @@
 import { Shield, Clock, Star } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "../AnimatedSection";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { hero } from "@/lib/skinpetra-content";
 import WhatsAppButton from "../WhatsAppButton";
 import { useState, useEffect, useCallback, useMemo, memo } from "react";
@@ -47,8 +47,9 @@ function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col bg-beige py-6 lg:py-20">
-      <div className="container mx-auto px-4 flex-1 flex flex-col">
+    <LazyMotion features={domAnimation}>
+      <section className="min-h-screen flex flex-col bg-beige py-6 lg:py-20">
+        <div className="container mx-auto px-4 flex-1 flex flex-col">
         {/* Desktop Logo - visible only on desktop */}
         <div className="hidden lg:block mb-8">
           <motion.div
@@ -232,9 +233,10 @@ function Hero() {
                             sizes="(max-width: 480px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
                             priority={index === 0} // Only prioritize first image
                             loading={index === 0 ? "eager" : "lazy"} // Optimize loading
-                            quality={index === 0 ? 90 : 75} // Higher quality for first image, lower for others
+                            quality={index === 0 ? 85 : 70} // Optimized quality for performance
                             placeholder="blur"
                             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                            fetchPriority={index === 0 ? "high" : "low"}
                           />
                         </div>
                       </motion.div>
@@ -263,6 +265,7 @@ function Hero() {
         </div>
       </div>
     </section>
+    </LazyMotion>
   );
 }
 
