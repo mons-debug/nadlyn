@@ -229,7 +229,7 @@ function Hero() {
                             alt={image.alt}
                             fill
                             className="object-cover"
-                            sizes="(max-width: 480px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
+                            sizes="(max-width: 480px) 320px, (max-width: 768px) 320px, (max-width: 1024px) 360px, 400px"
                             priority={index === 0} // Only prioritize first image
                             loading={index === 0 ? "eager" : "lazy"} // Optimize loading
                             quality={index === 0 ? 90 : 75} // Higher quality for first image, lower for others
