@@ -25,7 +25,7 @@ const comparisons = [
 
 export default function BeforeAfterSlider() {
   return (
-    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-12 lg:py-24 bg-gradient-to-b from-white to-slate-50" aria-labelledby="results-heading">
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           className="text-center mb-12 lg:mb-16"
@@ -34,10 +34,10 @@ export default function BeforeAfterSlider() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-neutral-900">
+          <h2 id="results-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-gray-900">
             Des résultats <span className="text-primary">spectaculaires</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-neutral-700 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-800 max-w-2xl mx-auto leading-relaxed">
             Découvrez les transformations réelles de nos clientes
           </p>
         </motion.div>
@@ -64,9 +64,11 @@ export default function BeforeAfterSlider() {
               pagination={{
                 clickable: true,
                 bulletActiveClass: '!bg-primary opacity-100',
-                bulletClass: 'swiper-pagination-bullet !bg-gray-300 !opacity-50 inline-block w-2.5 h-2.5 rounded-full mx-1.5 transition-all duration-300 cursor-pointer',
+                bulletClass: 'swiper-pagination-bullet !bg-gray-400 !opacity-70 inline-block w-2.5 h-2.5 rounded-full mx-1.5 transition-all duration-300 cursor-pointer',
               }}
               className="!pb-16"
+              role="region"
+              aria-label="Galerie d'images avant/après"
             >
               {comparisons.map((comparison, index) => (
                 <SwiperSlide key={index} className="flex justify-center">
@@ -77,13 +79,21 @@ export default function BeforeAfterSlider() {
 
             {/* Mobile Navigation */}
             <div className="flex justify-center items-center gap-4 mt-8">
-              <button className="swiper-button-prev-custom w-10 h-10 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-primary hover:bg-neutral-50">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <button 
+                className="swiper-button-prev-custom w-10 h-10 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-primary hover:bg-neutral-50 focus:outline-none focus:ring-4 focus:ring-primary/30"
+                aria-label="Image précédente"
+                type="button"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
-              <button className="swiper-button-next-custom w-10 h-10 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-primary hover:bg-neutral-50">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <button 
+                className="swiper-button-next-custom w-10 h-10 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center text-primary hover:bg-neutral-50 focus:outline-none focus:ring-4 focus:ring-primary/30"
+                aria-label="Image suivante"
+                type="button"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
@@ -123,15 +133,15 @@ function ComparisonSlide({ comparison }: { comparison: typeof comparisons[0] }) 
       transition={{ duration: 0.5 }}
     >
       <div className="bg-white rounded-xl lg:rounded-2xl shadow-lg overflow-hidden">
-        <div className="grid grid-cols-2 gap-1.5 sm:gap-2 p-1.5 sm:p-2">
+        <div className="grid grid-cols-2 gap-1.5 sm:gap-2 p-1.5 sm:p-2" role="img" aria-label={`Comparaison avant/après - ${comparison.title}`}>
           {/* Before Image */}
           <div className="relative aspect-[4/3]">
-            <div className="absolute top-3 left-3 z-10 bg-black/70 text-white px-2 py-1 rounded-full text-xs font-bold">
+            <div className="absolute top-3 left-3 z-10 bg-black/80 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
               AVANT
             </div>
             <Image
               src={comparison.before}
-              alt="Avant traitement SkinPetra"
+              alt={`Avant traitement SkinPetra - ${comparison.title}`}
               fill
               className="object-cover rounded-lg"
               sizes="(max-width: 768px) 50vw, 33vw"
@@ -140,12 +150,12 @@ function ComparisonSlide({ comparison }: { comparison: typeof comparisons[0] }) 
 
           {/* After Image */}
           <div className="relative aspect-[4/3]">
-            <div className="absolute top-3 right-3 z-10 bg-black/70 text-white px-2 py-1 rounded-full text-xs font-bold">
+            <div className="absolute top-3 right-3 z-10 bg-black/80 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
               APRÈS
             </div>
             <Image
               src={comparison.after}
-              alt="Après traitement SkinPetra"
+              alt={`Après traitement SkinPetra - ${comparison.title}`}
               fill
               className="object-cover rounded-lg"
               sizes="(max-width: 768px) 50vw, 33vw"
@@ -154,7 +164,7 @@ function ComparisonSlide({ comparison }: { comparison: typeof comparisons[0] }) 
         </div>
 
         <div className="p-4">
-          <h3 className="text-lg lg:text-xl font-bold text-neutral-900 text-center">
+          <h3 className="text-lg lg:text-xl font-bold text-gray-900 text-center">
             {comparison.title}
           </h3>
         </div>

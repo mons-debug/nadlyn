@@ -63,20 +63,25 @@ function ZoneCard({ zone, isActive, onClick }: ZoneCardProps) {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <motion.div
-        className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full ring-2 shadow cursor-pointer transition-all duration-300 overflow-hidden ${
+      <motion.button
+        className={`w-20 h-20 lg:w-24 lg:h-24 rounded-full ring-2 shadow cursor-pointer transition-all duration-300 overflow-hidden focus:outline-none focus:ring-4 focus:ring-primary/30 ${
           isActive 
             ? 'ring-primary/60 shadow-lg -translate-y-1' 
-            : 'ring-primary/30 hover:-translate-y-1 hover:shadow-md'
+            : 'ring-primary/50 hover:-translate-y-1 hover:shadow-md'
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={onClick}
+        aria-label={`Sélectionner zone de traitement ${zone.label} - ${zone.desc}`}
+        aria-pressed={isActive}
+        aria-expanded={isActive}
+        aria-controls={isActive ? `zone-details-${zone.key}` : undefined}
+        role="button"
       >
         <div className="relative w-full h-full">
           <Image
             src={zone.img}
-            alt={zone.label}
+            alt={`Zone de traitement ${zone.label}`}
             fill
             sizes="(max-width: 768px) 80px, 96px"
             className="object-cover object-center"
@@ -85,8 +90,8 @@ function ZoneCard({ zone, isActive, onClick }: ZoneCardProps) {
             }}
           />
         </div>
-      </motion.div>
-      <span className="text-xs lg:text-sm font-medium text-neutral-700 text-center">{zone.label}</span>
+      </motion.button>
+      <span className="text-xs lg:text-sm font-medium text-gray-800 text-center">{zone.label}</span>
     </motion.div>
   );
 }
@@ -101,7 +106,7 @@ export default function BodyZonesInteractive() {
   const activeZoneData = zones.find(zone => zone.key === activeZone);
 
   return (
-    <section className="max-w-7xl mx-auto py-12 lg:py-24 px-4">
+    <section className="max-w-7xl mx-auto py-12 lg:py-24 px-4" aria-labelledby="zones-heading">
       <div className="grid gap-6 lg:gap-10 lg:grid-cols-12 items-start">
         {/* Left column - Header */}
         <div className="lg:col-span-5">
@@ -111,7 +116,7 @@ export default function BodyZonesInteractive() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-neutral-900 text-center lg:text-left">
+            <h2 id="zones-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-neutral-900 text-center lg:text-left">
               Zones de <span className="text-primary">traitement</span>
             </h2>
             <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed text-center lg:text-left">
@@ -176,23 +181,26 @@ export default function BodyZonesInteractive() {
                   exit={{ opacity: 0, height: 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="overflow-hidden"
+                  role="region"
+                  aria-label={`Détails de la zone ${activeZoneData.label}`}
+                  id={`zone-details-${activeZoneData.key}`}
                 >
                   <div className="bg-white rounded-xl p-4 lg:p-6 border border-neutral-200 shadow-sm">
                     <div className="flex items-center gap-3 lg:gap-4">
                       <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full overflow-hidden ring-2 ring-primary/30">
                         <Image
                           src={activeZoneData.img}
-                          alt={activeZoneData.label}
+                          alt={`Zone de traitement ${activeZoneData.label}`}
                           width={64}
                           height={64}
                           className="w-full h-full object-cover"
                         />
                       </div>
                       <div>
-                        <h3 className="text-lg lg:text-xl font-semibold text-neutral-900 mb-1">
+                        <h3 className="text-lg lg:text-xl font-semibold text-gray-900 mb-1">
                           {activeZoneData.label}
                         </h3>
-                        <p className="text-sm lg:text-base text-neutral-600">{activeZoneData.desc}</p>
+                        <p className="text-sm lg:text-base text-gray-700">{activeZoneData.desc}</p>
                       </div>
                     </div>
                   </div>
