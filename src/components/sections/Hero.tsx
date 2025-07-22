@@ -171,7 +171,7 @@ function Hero() {
                       <Star key={i} size={14} className="text-[#E6B800] fill-current" />
                     ))}
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-neutral-600">4.9/5 • +10,000 avis</span>
+                  <span className="text-xs sm:text-sm font-medium text-gray-700">4.9/5 • +10,000 avis</span>
                 </div>
               </motion.div>
             </AnimatedSection>
@@ -239,14 +239,17 @@ function Hero() {
                 </div>
 
                 {/* Navigation Dots */}
-                <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+                <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
                   {productImages.map((_, index) => (
                     <button
                       key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        index === currentIndex ? "bg-primary w-4" : "bg-primary/30"
+                      className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 touch-none ${
+                        index === currentIndex ? "bg-primary w-5 sm:w-6" : "bg-primary/50"
                       }`}
                       onClick={() => handleCardClick(index)}
+                      aria-label={`Voir l'image ${index + 1} du produit`}
+                      role="tab"
+                      aria-selected={index === currentIndex}
                     />
                   ))}
                 </div>

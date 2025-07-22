@@ -43,7 +43,7 @@ export default function BenefitsGrid() {
   ];
 
   return (
-    <section id="benefits" className="py-12 lg:py-32 bg-gradient-to-b from-background via-cream/50 to-accent/30 relative overflow-hidden">
+    <section id="benefits" className="py-12 lg:py-32 bg-gradient-to-b from-background via-cream/50 to-accent/30 relative overflow-hidden" aria-labelledby="benefits-heading">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -73,7 +73,7 @@ export default function BenefitsGrid() {
               <span>Avantages exclusifs</span>
             </motion.div>
             
-            <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 heading">
+            <h2 id="benefits-heading" className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 heading">
               Pourquoi choisir <span className="text-gradient">SkinPetra</span> ?
             </h2>
             <p className="text-base sm:text-lg lg:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed font-light">

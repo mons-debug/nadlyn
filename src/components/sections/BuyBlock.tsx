@@ -167,53 +167,59 @@ export default function BuyBlock() {
 
                   {/* Compact Color Selection */}
                   <div className="mb-4">
-                    <h4 className="text-sm font-semibold mb-2">Choisissez votre couleur :</h4>
-                    <div className="grid grid-cols-3 gap-2">
+                    <h4 className="text-sm font-semibold mb-3" id="color-selection-label">Choisissez votre couleur :</h4>
+                    <div className="grid grid-cols-3 gap-3" role="radiogroup" aria-labelledby="color-selection-label">
                       {colors.map((color) => (
                         <motion.button
                           key={color.name}
                           onClick={() => setSelectedColor(color.name)}
-                          className={`p-2 sm:p-3 rounded-xl border-2 transition-all duration-300 ${
+                          className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 min-h-[60px] ${
                             selectedColor === color.name
-                              ? 'border-primary bg-primary/10'
-                              : 'border-gray-200 hover:border-primary/50'
+                              ? 'border-primary bg-primary/15 ring-2 ring-primary/20'
+                              : 'border-gray-300 hover:border-primary/60 hover:bg-primary/5'
                           }`}
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
+                          whileHover={{ scale: 1.01 }}
+                          whileTap={{ scale: 0.99 }}
+                          role="radio"
+                          aria-checked={selectedColor === color.name}
+                          aria-label={`Sélectionner la couleur ${color.label}`}
                         >
                           <div
-                            className="w-5 h-5 sm:w-6 sm:h-6 rounded-full mx-auto mb-1 border-2"
+                            className="w-6 h-6 sm:w-7 sm:h-7 rounded-full mx-auto mb-2 border-2 shadow-sm"
                             style={{ 
                               backgroundColor: color.hex,
                               borderColor: color.border
                             }}
                           />
-                          <span className="text-xs font-medium block">{color.label}</span>
+                          <span className="text-xs sm:text-sm font-medium block text-gray-800">{color.label}</span>
                         </motion.button>
                       ))}
                     </div>
                   </div>
 
                   {/* Compact Quantity & CTA Row */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
+                                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center">
                     {/* Quantity Selection */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <span className="text-sm font-semibold">Qté:</span>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-3">
                         <motion.button
                           onClick={() => handleQuantityChange(-1)}
-                          className="w-8 h-8 rounded-lg border-2 border-primary/20 hover:border-primary hover:bg-primary/10 transition-all duration-300 flex items-center justify-center font-bold text-sm"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
+                          className="w-10 h-10 rounded-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/20 transition-all duration-300 flex items-center justify-center font-bold text-base text-primary"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label="Diminuer la quantité"
+                          disabled={quantity <= 1}
                         >
                           -
                         </motion.button>
-                        <span className="text-lg font-bold w-8 text-center">{quantity}</span>
+                        <span className="text-lg font-bold w-8 text-center" aria-live="polite">{quantity}</span>
                         <motion.button
                           onClick={() => handleQuantityChange(1)}
-                          className="w-8 h-8 rounded-lg border-2 border-primary/20 hover:border-primary hover:bg-primary/10 transition-all duration-300 flex items-center justify-center font-bold text-sm"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
+                          className="w-10 h-10 rounded-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/20 transition-all duration-300 flex items-center justify-center font-bold text-base text-primary"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label="Augmenter la quantité"
                         >
                           +
                         </motion.button>
@@ -225,9 +231,10 @@ export default function BuyBlock() {
                       href={waLink(selectedColor, quantity)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex-1 w-full sm:w-auto block text-center py-3 px-4 sm:px-6 premium-gradient text-white font-bold text-sm sm:text-base rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
+                      className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30"
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                      aria-label={`Commander ${quantity} SkinPetra IPL couleur ${colors.find(c => c.name === selectedColor)?.label} maintenant`}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         Commander maintenant

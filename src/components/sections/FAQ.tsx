@@ -29,9 +29,12 @@ function AccordionItem({ question, answer, isOpen, onToggle, index }: AccordionI
           whileHover={{ scale: 1.01 }}
         >
           <motion.button
-            className="w-full px-5 py-4 lg:px-8 lg:py-6 text-left flex justify-between items-center hover:bg-primary/5 transition-all duration-300 group"
+            className="w-full px-5 py-4 lg:px-8 lg:py-6 text-left flex justify-between items-center hover:bg-primary/5 transition-all duration-300 group min-h-[60px]"
             onClick={onToggle}
             whileTap={{ scale: 0.99 }}
+            aria-expanded={isOpen}
+            aria-controls={`faq-content-${index}`}
+            id={`faq-button-${index}`}
           >
             <span className="font-semibold text-base lg:text-lg text-foreground pr-4 heading group-hover:text-primary transition-colors">
               {question}
@@ -53,9 +56,12 @@ function AccordionItem({ question, answer, isOpen, onToggle, index }: AccordionI
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="overflow-hidden"
+                id={`faq-content-${index}`}
+                role="region"
+                aria-labelledby={`faq-button-${index}`}
               >
                 <motion.div
-                  className="px-5 pb-4 lg:px-8 lg:pb-6 text-secondary leading-relaxed border-t border-primary/10 pt-4 lg:pt-6 font-light text-sm lg:text-base"
+                  className="px-5 pb-4 lg:px-8 lg:pb-6 text-gray-700 leading-relaxed border-t border-primary/10 pt-4 lg:pt-6 font-light text-sm lg:text-base"
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -10, opacity: 0 }}
