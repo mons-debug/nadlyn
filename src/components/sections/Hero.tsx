@@ -26,7 +26,7 @@ function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % productImages.length);
-    }, 4000); // Increased from 3000 to 4000ms for smoother experience
+    }, 5000); // Increased to 5000ms for even smoother experience
     return () => clearInterval(timer);
   }, [productImages.length]);
 
@@ -36,9 +36,9 @@ function Hero() {
     
     return {
       zIndex: isActive ? 10 : 1,
-      transform: isActive ? "scale(1)" : "scale(0.95)",
-      opacity: isActive ? 1 : 0.3,
-      willChange: 'transform, opacity', // Performance optimization
+      transform: isActive ? "scale(1)" : "scale(0.98)", // Less dramatic scaling
+      opacity: isActive ? 1 : 0.4, // Less dramatic opacity change
+      willChange: 'transform, opacity',
     };
   }, [currentIndex, productImages.length]);
 
@@ -53,9 +53,9 @@ function Hero() {
         <div className="hidden lg:block mb-8">
           <motion.div
             className="flex justify-center"
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           >
             <Image
               src="/49a6897f-b2d8-42e4-8b6f-c6275acf9291.png"
@@ -74,9 +74,9 @@ function Hero() {
             <AnimatedSection>
               <motion.h1 
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-neutral-900 mb-4 lg:mb-6"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <span className="text-primary">{hero.title.split('–')[0]}</span>
                 <br />
@@ -89,9 +89,9 @@ function Hero() {
             <AnimatedSection delay={0.1}>
               <motion.p
                 className="text-base sm:text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
+                transition={{ delay: 0.1, duration: 0.4 }}
               >
                 {hero.tagline}
               </motion.p>
@@ -101,9 +101,9 @@ function Hero() {
             <AnimatedSection delay={0.2}>
               <motion.div
                 className="pt-2 lg:pt-4 flex justify-center lg:justify-start"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
               >
                 <WhatsAppButton className="w-full sm:w-auto">
                   Commander sur WhatsApp
@@ -115,9 +115,9 @@ function Hero() {
             <AnimatedSection delay={0.3}>
               <motion.div
                 className="hidden lg:grid lg:grid-cols-3 gap-4 pt-8"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
               >
                 {benefits.map((benefit, index) => (
                   <motion.div
@@ -138,9 +138,9 @@ function Hero() {
             <AnimatedSection delay={0.3}>
               <motion.div
                 className="grid grid-cols-2 gap-2 pt-4 lg:hidden max-w-md mx-auto"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
               >
                 {benefits.slice(0, 2).map((benefit, index) => (
                   <motion.div
@@ -163,7 +163,7 @@ function Hero() {
                 className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 pt-4 lg:pt-6 border-t border-neutral-200"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
+                transition={{ delay: 0.4, duration: 0.4 }}
               >
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-1">
@@ -183,9 +183,9 @@ function Hero() {
             <div className="block lg:hidden mb-6">
               <motion.div
                 className="flex justify-center"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
+                transition={{ delay: 0.1, duration: 0.4 }}
               >
                 <Image
                   src="/49a6897f-b2d8-42e4-8b6f-c6275acf9291.png"
@@ -201,9 +201,9 @@ function Hero() {
             <AnimatedSection>
               <motion.div
                 className="relative w-full max-w-xs sm:max-w-sm mx-auto lg:max-w-md h-[300px] sm:h-[400px] lg:h-[500px]"
-                initial={{ scale: 0.9, opacity: 0 }}
+                initial={{ scale: 0.95, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+                transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
               >
                 <div className="relative w-full h-full">
                   <AnimatePresence>
@@ -213,12 +213,12 @@ function Hero() {
                         className="absolute inset-0 cursor-pointer"
                         style={{
                           ...calculateCardStyle(index),
-                          transition: "all 0.3s ease-out", // Reduced from 0.5s to 0.3s
+                          transition: "all 0.2s ease-out", // Further reduced to 0.2s
                         }}
                         onClick={() => handleCardClick(index)}
                         whileHover={{ 
-                          scale: index === currentIndex ? 1.01 : 1, // Reduced hover effect
-                          transition: { duration: 0.2 } // Faster hover transition
+                          scale: index === currentIndex ? 1.005 : 1, // Minimal hover effect
+                          transition: { duration: 0.15 } // Very fast hover transition
                         }}
                       >
                         <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-xl bg-white">
