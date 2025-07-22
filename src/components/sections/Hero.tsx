@@ -70,18 +70,19 @@ function Hero() {
 
         <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-16 items-center flex-1">
           {/* Content */}
-          <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left">
+          <div className="flex-1 space-y-8 lg:space-y-10 text-center lg:text-left">
             <AnimatedSection>
               <motion.h1 
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-neutral-900 mb-4 lg:mb-6"
+                className="font-bold leading-[1.1] text-neutral-900"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <span className="text-primary">SkinPetra IPL</span>
-                <br />
-                <span className="text-2xl sm:text-3xl lg:text-5xl font-medium mt-3 block">
+                <span className="block text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-extrabold bg-gradient-to-r from-primary via-rose-gold to-gold bg-clip-text text-transparent leading-tight">
+                  SkinPetra IPL
+                </span>
+                <span className="block text-2xl sm:text-3xl lg:text-5xl xl:text-6xl font-light text-charcoal mt-2 lg:mt-4 tracking-wide">
                   Révolutionnaire
                 </span>
               </motion.h1>
@@ -89,31 +90,53 @@ function Hero() {
             
             <AnimatedSection delay={0.1}>
               <motion.p 
-                className="text-base sm:text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
+                className="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-3xl mx-auto lg:mx-0 font-light"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                Adieu aux poils indésirables pour toujours !
+                <span className="font-medium text-neutral-800">Adieu aux poils indésirables</span>
+                <br className="hidden sm:block" />
+                <span className="text-primary font-semibold"> pour toujours !</span>
               </motion.p>
             </AnimatedSection>
 
-            {/* CTA Button - directly below tagline */}
+            {/* Enhanced Features Preview */}
+            <AnimatedSection delay={0.15}>
+              <motion.div
+                className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 text-sm sm:text-base"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 0.4 }}
+              >
+                {["✨ Résultats en 8 semaines", "🏠 Confort de votre maison", "🛡️ Sans douleur"].map((feature, index) => (
+                  <motion.span
+                    key={index}
+                    className="px-4 py-2 bg-gradient-to-r from-primary/10 to-rose-gold/10 rounded-full text-neutral-700 font-medium border border-primary/20"
+                    whileHover={{ scale: 1.05, backgroundColor: "rgba(212, 175, 55, 0.1)" }}
+                  >
+                    {feature}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </AnimatedSection>
+
+            {/* CTA Button - with enhanced spacing */}
             <AnimatedSection delay={0.2}>
               <motion.div
-                className="pt-2 lg:pt-4 flex justify-center lg:justify-start"
+                className="pt-4 lg:pt-6 flex justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.4 }}
               >
-                <WhatsAppButton className="w-full sm:w-auto">
-                  Commander sur WhatsApp
+                <WhatsAppButton className="w-full sm:w-auto text-lg font-bold">
+                  Commander maintenant
                 </WhatsAppButton>
               </motion.div>
             </AnimatedSection>
 
-            {/* Benefits - show on desktop only */}
+            {/* Benefits - show on desktop only with improved styling */}
             <AnimatedSection delay={0.3}>
               <motion.div
                 className="hidden lg:grid lg:grid-cols-3 gap-4 pt-8"
@@ -124,11 +147,11 @@ function Hero() {
                 {benefits.map((benefit, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-white/50 border border-neutral-200"
-                    whileHover={{ scale: 1.02 }}
+                    className="flex items-center gap-3 p-4 rounded-xl bg-white/70 border border-neutral-200/50 shadow-sm hover:shadow-md transition-all duration-300"
+                    whileHover={{ scale: 1.02, y: -2 }}
                   >
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                      <benefit.icon size={16} className="text-white" />
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary to-rose-gold flex items-center justify-center shadow-lg">
+                      <benefit.icon size={20} className="text-white" />
                     </div>
                     <span className="text-sm font-medium text-neutral-800">{benefit.text}</span>
                   </motion.div>
@@ -136,10 +159,10 @@ function Hero() {
               </motion.div>
             </AnimatedSection>
 
-            {/* Mobile benefits - compact version */}
+            {/* Mobile benefits - compact version with enhanced styling */}
             <AnimatedSection delay={0.3}>
               <motion.div
-                className="grid grid-cols-2 gap-2 pt-4 lg:hidden max-w-md mx-auto"
+                className="grid grid-cols-2 gap-3 pt-4 lg:hidden max-w-sm mx-auto"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
@@ -147,22 +170,22 @@ function Hero() {
                 {benefits.slice(0, 2).map((benefit, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center gap-2 p-2 rounded-lg bg-white/50 border border-neutral-200"
+                    className="flex items-center gap-2 p-3 rounded-xl bg-white/70 border border-neutral-200/50 shadow-sm"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                      <benefit.icon size={12} className="text-white" />
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-rose-gold flex items-center justify-center shadow-sm">
+                      <benefit.icon size={14} className="text-white" />
                     </div>
-                    <span className="text-xs font-medium text-neutral-800">{benefit.text}</span>
+                    <span className="text-xs font-semibold text-neutral-800">{benefit.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
             </AnimatedSection>
 
-            {/* Trust indicators - mobile optimized */}
+            {/* Trust indicators - mobile optimized with enhanced styling */}
             <AnimatedSection delay={0.4}>
               <motion.div
-                className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 pt-4 lg:pt-6 border-t border-neutral-200"
+                className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-6 pt-6 lg:pt-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.4 }}
@@ -170,11 +193,15 @@ function Hero() {
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-1">
                     {[1,2,3,4,5].map((i) => (
-                      <Star key={i} size={14} className="text-[#E6B800] fill-current" />
+                      <Star key={i} size={16} className="text-[#E6B800] fill-current drop-shadow-sm" />
                     ))}
                   </div>
-                  <span className="text-xs sm:text-sm font-medium text-gray-700">4.9/5 • +10,000 avis</span>
+                  <span className="text-sm font-semibold text-neutral-700">4.9/5</span>
                 </div>
+                <div className="h-4 w-px bg-neutral-300 hidden sm:block"></div>
+                <span className="text-sm font-medium text-neutral-600">+10,000 clients satisfaits</span>
+                <div className="h-4 w-px bg-neutral-300 hidden sm:block"></div>
+                <span className="text-sm font-medium text-primary">✅ Garantie 30 jours</span>
               </motion.div>
             </AnimatedSection>
           </div>
