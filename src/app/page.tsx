@@ -25,7 +25,6 @@ const Footer = dynamic(() => import('@/components/sections/Footer'), {
 
 const WhatsAppFab = dynamic(() => import('@/components/WhatsAppFab'), {
   loading: () => null,
-  ssr: false
 })
 
 export default function Home() {
