@@ -47,7 +47,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col bg-beige py-6 lg:py-20">
+    <section className="min-h-screen flex flex-col bg-gradient-to-br from-white via-accent/30 to-muted/40 py-6 lg:py-20">
       <div className="container mx-auto px-4 flex-1 flex flex-col">
         {/* Desktop Logo - visible only on desktop */}
         <div className="hidden lg:block mb-8">

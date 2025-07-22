@@ -30,7 +30,7 @@ export default function BuyBlock() {
   };
 
   return (
-    <section className="py-8 lg:py-16 bg-gradient-to-br from-cream via-warm-beige/30 to-accent relative overflow-hidden">
+    <section className="py-8 lg:py-16 bg-gradient-to-br from-white via-accent/40 to-muted/30 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

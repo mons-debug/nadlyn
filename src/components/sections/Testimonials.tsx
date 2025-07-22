@@ -33,7 +33,7 @@ const testimonialsWithAvatars = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-12 lg:py-24 bg-beige">
+    <section id="testimonials" className="py-12 lg:py-24 bg-gradient-to-b from-muted/50 to-white">
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-12 lg:mb-16">
