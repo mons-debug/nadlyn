@@ -47,15 +47,15 @@ export default function BenefitsGrid() {
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-20 left-20 w-64 h-64 rounded-full bg-gradient-to-br from-primary/5 to-rose-gold/5 blur-3xl"
+          className="absolute top-20 left-20 w-64 h-64 rounded-full bg-gradient-to-br from-primary/3 to-rose-gold/3 blur-3xl hidden lg:block"
           animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
+            x: [0, 30, 0],
+            y: [0, -20, 0],
           }}
           transition={{
-            duration: 12,
+            duration: 20,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "linear"
           }}
         />
       </div>
@@ -89,11 +89,11 @@ export default function BenefitsGrid() {
             return (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <motion.div
-                  className="group p-6 lg:p-10 rounded-2xl lg:rounded-3xl glass-effect border border-primary/10 hover:border-primary/30 transition-all duration-500 card-hover relative overflow-hidden"
-                  initial={{ opacity: 0, y: 30 }}
+                  className="group p-6 lg:p-10 rounded-2xl lg:rounded-3xl glass-effect border border-primary/10 hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  whileHover={{ y: -4, transition: { duration: 0.2 } }}
                 >
                   {/* Background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${benefit.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl lg:rounded-3xl`} />
@@ -101,8 +101,8 @@ export default function BenefitsGrid() {
                   {/* Icon */}
                   <div className="relative mb-4 lg:mb-6">
                     <motion.div
-                      className={`w-12 h-12 lg:w-20 lg:h-20 rounded-xl lg:rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
-                      whileHover={{ rotate: 5 }}
+                      className={`w-12 h-12 lg:w-20 lg:h-20 rounded-xl lg:rounded-2xl bg-gradient-to-br ${benefit.color} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-200 shadow-lg`}
+                      whileHover={{ rotate: 2, transition: { duration: 0.15 } }}
                     >
                       <Icon size={24} className="text-white lg:w-8 lg:h-8" />
                     </motion.div>
@@ -122,28 +122,28 @@ export default function BenefitsGrid() {
                       {'text' in benefit ? benefit.text : benefit.description}
                     </p>
 
-                    {/* Hover arrow - hide on mobile */}
+                    {/* Hover arrow - desktop only */}
                     <motion.div
                       className="mt-4 inline-flex items-center text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:flex"
-                      initial={{ x: -10 }}
-                      whileHover={{ x: 0 }}
+                      initial={{ x: -5 }}
+                      whileHover={{ x: 0, transition: { duration: 0.2 } }}
                     >
                       <span className="text-sm">En savoir plus</span>
                       <motion.span 
                         className="ml-2"
-                        animate={{ x: [0, 4, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity }}
+                        animate={{ x: [0, 2, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
                       >
                         →
                       </motion.span>
                     </motion.div>
                   </div>
 
-                  {/* Corner decoration - hide on mobile */}
+                  {/* Corner decoration - desktop only */}
                   <motion.div
-                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden lg:block"
+                    className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:block"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                   >
                     <div className="w-2 h-2 bg-gold rounded-full absolute top-1 left-1" />
                   </motion.div>

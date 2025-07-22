@@ -34,15 +34,15 @@ export default function BuyBlock() {
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gradient-to-br from-primary/10 to-gold/10 blur-3xl"
+          className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-gradient-to-br from-primary/5 to-gold/5 blur-3xl hidden lg:block"
           animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 180, 360]
+            scale: [1, 1.05, 1],
+            rotate: [0, 360]
           }}
           transition={{
-            duration: 20,
+            duration: 30,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "linear"
           }}
         />
       </div>
@@ -56,24 +56,24 @@ export default function BuyBlock() {
               {/* Compact Features List */}
               <motion.div
                 className="order-2 lg:order-1 lg:col-span-2 space-y-4"
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.4 }}
               >
                 <h3 className="text-lg font-bold heading mb-3">Avantages clés :</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
                   {features.map((feature, index) => (
                     <motion.div
                       key={index}
-                      className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 ${
+                      className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-200 ${
                         feature.highlight 
                           ? 'glass-effect border border-primary/20' 
                           : 'bg-white/40'
                       }`}
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05, duration: 0.6 }}
-                      whileHover={{ scale: 1.02 }}
+                      transition={{ delay: index * 0.02, duration: 0.3 }}
+                      whileHover={{ scale: 1.01, transition: { duration: 0.15 } }}
                     >
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                         feature.highlight ? 'premium-gradient' : 'bg-primary/10'
@@ -113,9 +113,9 @@ export default function BuyBlock() {
               {/* Compact Order Form */}
               <motion.div
                 className="order-1 lg:order-2 lg:col-span-3"
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.4 }}
               >
                 <div className="glass-effect p-4 sm:p-6 rounded-2xl border border-primary/20 backdrop-blur-xl">
                   {/* Compact Product Header */}
@@ -142,16 +142,16 @@ export default function BuyBlock() {
                   {/* Compact Product Image */}
                   <motion.div
                     className="relative mb-4"
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
+                    transition={{ delay: 0.1, duration: 0.3 }}
                   >
                     <div className="relative aspect-[5/3] bg-gradient-to-br from-white/20 to-white/10 rounded-xl p-2 sm:p-3 overflow-hidden">
-                      <motion.div
+                                              <motion.div
                         key={selectedColor}
-                        initial={{ opacity: 0, scale: 0.8 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.4 }}
+                        transition={{ duration: 0.2 }}
                         className="relative w-full h-full"
                       >
                         <Image
@@ -232,8 +232,8 @@ export default function BuyBlock() {
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         Commander maintenant
                         <motion.span
-                          animate={{ x: [0, 3, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
+                          animate={{ x: [0, 2, 0] }}
+                          transition={{ duration: 2, repeat: Infinity }}
                           className="text-sm"
                         >
                           →
