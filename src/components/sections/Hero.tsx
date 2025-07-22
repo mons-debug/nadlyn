@@ -79,10 +79,10 @@ function Hero() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <span className="text-primary">{hero.title.split('–')[0]}</span>
+                <span className="text-primary">SkinPetra IPL</span>
                 <br />
                 <span className="text-2xl sm:text-3xl lg:text-5xl font-medium mt-3 block">
-                  {hero.title.split('–')[1]}
+                  Révolutionnaire
                 </span>
               </motion.h1>
             </AnimatedSection>
@@ -95,7 +95,7 @@ function Hero() {
                 transition={{ delay: 0.1, duration: 0.4 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                {hero.tagline}
+                Adieu aux poils indésirables pour toujours !
               </motion.p>
             </AnimatedSection>
 
