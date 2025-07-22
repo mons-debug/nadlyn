@@ -24,7 +24,7 @@ export default function WhatsAppButton({
       href={waLink(color, quantity)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 bg-[#25D366] hover:bg-[#20b358] text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-[#25D366]/30 ${className}`}
+      className={`group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30 ${className}`}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       aria-label="Contacter par WhatsApp pour commander SkinPetra IPL"
