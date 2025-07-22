@@ -8,13 +8,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-luxury-dark via-charcoal to-black text-white py-20 relative overflow-hidden">
-      {/* Luxury background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <footer className="bg-black text-white py-20">
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Brand */}
           <motion.div
@@ -34,8 +29,8 @@ export default function Footer() {
                 height={35}
                 className="h-10 w-auto filter brightness-0 invert"
               />
-              <span className="text-xl font-light text-luxury-gold">×</span>
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-luxury-gold to-yellow-400 bg-clip-text text-transparent">
+              <span className="text-xl font-light text-gray-400">×</span>
+              <h3 className="text-3xl font-bold text-white">
                 SkinPetra IPL
               </h3>
             </motion.div>
@@ -50,12 +45,24 @@ export default function Footer() {
                 href={waLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-luxury-gold to-yellow-500 hover:from-yellow-500 hover:to-luxury-gold text-black rounded-full transition-all duration-300 font-semibold text-lg shadow-2xl border border-luxury-gold/20"
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(212, 175, 55, 0.3)" }}
+                className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30"
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <FaWhatsapp size={20} />
-                Contacter sur WhatsApp
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <FaWhatsapp size={20} />
+                  Contacter sur WhatsApp
+                  <motion.span
+                    className="inline-block"
+                    animate={{ x: [0, 2, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    →
+                  </motion.span>
+                </span>
+                
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
               </motion.a>
             </div>
           </motion.div>

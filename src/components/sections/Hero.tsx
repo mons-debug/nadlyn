@@ -3,7 +3,7 @@
 import { Shield, Clock, Star } from "lucide-react";
 import Image from "next/image";
 import AnimatedSection from "../AnimatedSection";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { hero } from "@/lib/skinpetra-content";
 import WhatsAppButton from "../WhatsAppButton";
 import { useState, useEffect, useCallback, useMemo, memo } from "react";
@@ -47,7 +47,7 @@ function Hero() {
   }, []);
 
   return (
-    <section className="min-h-screen flex flex-col bg-gradient-to-br from-white via-accent/30 to-muted/40 py-6 lg:py-20">
+    <section className="min-h-screen flex flex-col bg-beige py-6 lg:py-20">
       <div className="container mx-auto px-4 flex-1 flex flex-col">
         {/* Desktop Logo - visible only on desktop */}
         <div className="hidden lg:block mb-8">
@@ -73,29 +73,29 @@ function Hero() {
           <div className="flex-1 space-y-6 lg:space-y-8 text-center lg:text-left">
             <AnimatedSection>
               <motion.h1 
-                className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-luxury-dark mb-4 lg:mb-6"
+                className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-neutral-900 mb-4 lg:mb-6"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <span className="text-primary">{hero.title.split('–')[0]}</span>
+                <span className="text-primary">SkinPetra IPL</span>
                 <br />
                 <span className="text-2xl sm:text-3xl lg:text-5xl font-medium mt-3 block">
-                  {hero.title.split('–')[1]}
+                  Révolutionnaire
                 </span>
               </motion.h1>
             </AnimatedSection>
             
             <AnimatedSection delay={0.1}>
               <motion.p 
-                className="text-base sm:text-lg lg:text-xl text-charcoal leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
+                className="text-base sm:text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                {hero.tagline}
+                Adieu aux poils indésirables pour toujours !
               </motion.p>
             </AnimatedSection>
 
@@ -130,7 +130,7 @@ function Hero() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center">
                       <benefit.icon size={16} className="text-white" />
                     </div>
-                    <span className="text-sm font-medium text-luxury-dark">{benefit.text}</span>
+                    <span className="text-sm font-medium text-neutral-800">{benefit.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -153,7 +153,7 @@ function Hero() {
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
                       <benefit.icon size={12} className="text-white" />
                     </div>
-                    <span className="text-xs font-medium text-luxury-dark">{benefit.text}</span>
+                    <span className="text-xs font-medium text-neutral-800">{benefit.text}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -229,12 +229,13 @@ function Hero() {
                             alt={image.alt}
                             fill
                             className="object-cover"
-                            sizes="(max-width: 480px) 320px, (max-width: 768px) 320px, (max-width: 1024px) 360px, 400px"
+                            sizes="(max-width: 480px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
                             priority={index === 0} // Only prioritize first image
                             loading={index === 0 ? "eager" : "lazy"} // Optimize loading
-                            quality={index === 0 ? 90 : 75} // Higher quality for first image, lower for others
+                            quality={index === 0 ? 85 : 70} // Optimized quality for performance
                             placeholder="blur"
                             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                            fetchPriority={index === 0 ? "high" : "low"}
                           />
                         </div>
                       </motion.div>
