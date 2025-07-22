@@ -1,23 +1,46 @@
-import Hero from "@/components/sections/Hero";
-import BodyZonesInteractive from "@/components/BodyZonesInteractive";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import Testimonials from "@/components/sections/Testimonials";
-import FAQ from "@/components/sections/FAQ";
-import BuyBlock from "@/components/sections/BuyBlock";
-import Footer from "@/components/sections/Footer";
-import WhatsAppFab from "@/components/WhatsAppFab";
+import dynamic from 'next/dynamic'
+import Hero from '@/components/sections/Hero'
+import BuyBlock from '@/components/sections/BuyBlock'
+
+// Dynamic imports for better performance - defer non-critical components
+const BenefitsGrid = dynamic(() => import('@/components/sections/BenefitsGrid'), {
+  loading: () => <div className="min-h-[400px] bg-gradient-to-b from-background to-accent/30" />,
+  ssr: true
+})
+
+const FAQ = dynamic(() => import('@/components/sections/FAQ'), {
+  loading: () => <div className="min-h-[300px] bg-background" />,
+  ssr: true
+})
+
+const Testimonials = dynamic(() => import('@/components/sections/Testimonials'), {
+  loading: () => <div className="min-h-[400px] bg-gradient-to-b from-accent/30 to-background" />,
+  ssr: true
+})
+
+const Footer = dynamic(() => import('@/components/sections/Footer'), {
+  loading: () => <div className="min-h-[200px] bg-gray-900" />,
+  ssr: true
+})
+
+const WhatsAppFab = dynamic(() => import('@/components/WhatsAppFab'), {
+  loading: () => null,
+  ssr: false
+})
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
+      {/* Critical above-the-fold content loaded immediately */}
       <Hero />
-      <BodyZonesInteractive />
-      <BeforeAfterSlider />
       <BuyBlock />
+      
+      {/* Non-critical content loaded dynamically */}
+      <BenefitsGrid />
       <Testimonials />
       <FAQ />
       <Footer />
       <WhatsAppFab />
-    </div>
-  );
+    </main>
+  )
 }

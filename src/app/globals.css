@@ -174,3 +174,37 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--black);
 }
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile for better performance */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  /* Optimize font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+}
+
+/* Critical font loading */
+@font-face {
+  font-family: 'Geist';
+  font-display: swap;
+  font-weight: 400;
+}
+
+/* Reduce motion for users with motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

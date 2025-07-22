@@ -77,6 +77,7 @@ function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
+                style={{ willChange: 'transform, opacity' }}
               >
                 <span className="text-primary">{hero.title.split('–')[0]}</span>
                 <br />
@@ -85,13 +86,14 @@ function Hero() {
                 </span>
               </motion.h1>
             </AnimatedSection>
-
+            
             <AnimatedSection delay={0.1}>
-              <motion.p
+              <motion.p 
                 className="text-base sm:text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
+                style={{ willChange: 'transform, opacity' }}
               >
                 {hero.tagline}
               </motion.p>
@@ -227,10 +229,12 @@ function Hero() {
                             alt={image.alt}
                             fill
                             className="object-cover"
-                            sizes="(max-width: 768px) 100vw, 50vw"
+                            sizes="(max-width: 480px) 280px, (max-width: 768px) 350px, (max-width: 1024px) 400px, 450px"
                             priority={index === 0} // Only prioritize first image
                             loading={index === 0 ? "eager" : "lazy"} // Optimize loading
-                            quality={85} // Slightly reduce quality for performance
+                            quality={index === 0 ? 90 : 75} // Higher quality for first image, lower for others
+                            placeholder="blur"
+                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                           />
                         </div>
                       </motion.div>

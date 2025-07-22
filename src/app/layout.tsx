@@ -5,11 +5,14 @@ import "./globals.css";
 const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -47,6 +50,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://wa.me" />
+        <link rel="preload" href="/cropped-Nadlyn-Logo-01-tightest-cream-300x70.png" as="image" />
+        <link rel="preload" href="/ChatGPT Image Jul 21, 2025, 11_42_19 PM.png" as="image" />
+        <meta name="format-detection" content="telephone=no" />
+      </head>
       <body
         className={`${geist.variable} ${geistMono.variable} antialiased`}
       >
