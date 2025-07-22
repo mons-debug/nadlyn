@@ -13,9 +13,9 @@ export default function BuyBlock() {
   const [quantity, setQuantity] = useState(1);
 
   const colors = [
-    { name: "noir", hex: "#1a1a1a", label: "Noir Élégant", border: "#333", image: "/3f723df2-54dd-47f1-91f0-6692a9a42daf.png" },
-    { name: "rose", hex: "#f8bbd9", label: "Rose Doré", border: "#e91e63", image: "/4a566c53-572d-4866-9a6c-38a86faa7c1c.png" },
-    { name: "blanc", hex: "#ffffff", label: "Blanc Nacré", border: "#e5e7eb", image: "/f38f25be-8765-424b-a071-f3aae9c13eb8.png" },
+    { name: "noir", hex: "#1a1a1a", label: "Noir Élégant", border: "#333", image: "/4a566c53-572d-4866-9a6c-38a86faa7c1c.png" },
+    { name: "rose", hex: "#f8bbd9", label: "Rose Doré", border: "#e91e63", image: "/f38f25be-8765-424b-a071-f3aae9c13eb8.png" },
+    { name: "blanc", hex: "#ffffff", label: "Blanc Nacré", border: "#e5e7eb", image: "/3f723df2-54dd-47f1-91f0-6692a9a42daf.png" },
   ];
 
   const features = [
