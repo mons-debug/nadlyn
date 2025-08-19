@@ -120,7 +120,7 @@ export default function BodyZonesInteractive() {
               Zones de <span className="text-primary">traitement</span>
             </h2>
             <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed text-center lg:text-left">
-              SkinPetra IPL s&apos;adapte à toutes les zones de votre corps pour une épilation 
+              Lumesilk IPL s&apos;adapte à toutes les zones de votre corps pour une épilation 
               complète et confortable.
             </p>
           </motion.div>

@@ -74,9 +74,9 @@ export default function BenefitsGrid() {
             </motion.div>
             
             <h2 id="benefits-heading" className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 heading">
-              Pourquoi choisir <span className="text-gradient">SkinPetra</span> ?
+              Pourquoi choisir <span className="text-gradient">Lumesilk</span> ?
             </h2>
-            <p className="text-base sm:text-lg lg:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-base sm:text-lg lg:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed font-normal">
               Découvrez tous les avantages de notre technologie IPL révolutionnaire
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function BenefitsGrid() {
                       {benefit.title}
                     </h3>
                     
-                    <p className="text-secondary text-sm lg:text-base leading-relaxed font-light">
+                    <p className="text-secondary text-sm lg:text-base leading-relaxed font-normal">
                       {'text' in benefit ? benefit.text : benefit.description}
                     </p>
 

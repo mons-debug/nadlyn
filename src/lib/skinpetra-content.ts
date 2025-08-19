@@ -1,15 +1,15 @@
 export const hero = {
-  title: "Skinpetra IPL Révolutionnaire – Adieu aux poils indésirables pour toujours !",
+  title: "Lumesilk IPL Révolutionnaire – Adieu aux poils indésirables pour toujours !",
   tagline:
     "Une peau douce comme de la soie d'un simple toucher – Confiance infinie, beauté durable",
   img: "/hero.webp",
-  imgAlt: "Skinpetra IPL handset in hand",
+  imgAlt: "Lumesilk IPL handset in hand",
 };
 
 export const bodyZones = {
   heading: "De la Tête aux Pieds : Une Épilation Douce et Sûre",
   img: "/zones.webp",
-  imgAlt: "Body zones safe for Skinpetra IPL",
+  imgAlt: "Body zones safe for Lumesilk IPL",
 };
 
 export const benefits = [
@@ -31,8 +31,8 @@ export const benefits = [
 ];
 
 export const beforeAfter = {
-  before: { src: "/befor.webp_.jpg", alt: "Avant Skinpetra" },
-  after: { src: "/after.webp2.jpg", alt: "Après Skinpetra" },
+  before: { src: "/befor.webp_.jpg", alt: "Avant Lumesilk" },
+  after: { src: "/after.webp2.jpg", alt: "Après Lumesilk" },
 };
 
 export const testimonials = [
@@ -62,14 +62,14 @@ export const testimonials = [
 export const faq = [
   {
     q: "L'IPL est-il sûr pour une utilisation à domicile ?",
-    a: "Absolument ! Le Skinpetra IPL est spécialement conçu pour un usage sécurisé à domicile avec capteurs intelligents et protection UV intégrée.",
+    a: "Absolument ! Le Lumesilk IPL est spécialement conçu pour un usage sécurisé à domicile avec capteurs intelligents et protection UV intégrée.",
   },
   {
-    q: "L'utilisation de l'appareil Skinpetra IPL est-elle sûre ?",
+    q: "L'utilisation de l'appareil Lumesilk IPL est-elle sûre ?",
     a: "Oui, certifié selon les normes internationales de sécurité et équipé de multiples protections pour votre tranquillité d'esprit.",
   },
   {
-    q: "Pour quels types de peau le Skinpetra IPL est-il adapté ?",
+    q: "Pour quels types de peau le Lumesilk IPL est-il adapté ?",
     a: "Fonctionne sur la plupart des carnations ; meilleurs résultats sur poils foncés / peau claire. Consultez notre guide pour votre type.",
   },
   {
@@ -89,4 +89,4 @@ export const price = {
 };
 
 export const closing =
-  "Libérez-vous des contraintes des poils indésirables et profitez d'une vie nouvelle pleine de confiance avec Skinpetra IPL – votre investissement dans une beauté durable !"; 
+  "Libérez-vous des contraintes des poils indésirables et profitez d'une vie nouvelle pleine de confiance avec Lumesilk IPL – votre investissement dans une beauté durable !";

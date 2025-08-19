@@ -42,12 +42,12 @@ export default function ClosingBanner() {
             </motion.div>
 
             <motion.p
-              className="text-xl mb-8 opacity-90 leading-relaxed font-light"
+              className="text-xl mb-8 opacity-90 leading-relaxed font-normal"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 0.9, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              {closing}
+              {closing.replaceAll('Skinpetra', 'Lumesilk').replaceAll('SkinPetra', 'Lumesilk')}
             </motion.p>
 
             <motion.a

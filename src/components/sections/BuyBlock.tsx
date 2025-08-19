@@ -120,7 +120,7 @@ export default function BuyBlock() {
                 <div className="glass-effect p-4 sm:p-6 rounded-2xl border border-primary/20 backdrop-blur-xl">
                   {/* Compact Product Header */}
                   <div className="text-center mb-4">
-                    <h3 className="text-xl sm:text-2xl font-bold heading mb-1">SkinPetra IPL</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold heading mb-1">Lumesilk IPL</h3>
                     <p className="text-xs text-secondary">Épilation définitive à domicile</p>
                   </div>
 
@@ -156,7 +156,7 @@ export default function BuyBlock() {
                       >
                         <Image
                           src={colors.find(c => c.name === selectedColor)?.image || colors[0].image}
-                          alt={`SkinPetra IPL ${colors.find(c => c.name === selectedColor)?.label || colors[0].label}`}
+                          alt={`Lumesilk IPL ${colors.find(c => c.name === selectedColor)?.label || colors[0].label}`}
                           fill
                           className="object-contain"
                           priority
@@ -234,7 +234,7 @@ export default function BuyBlock() {
                       className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30"
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
-                      aria-label={`Commander ${quantity} SkinPetra IPL couleur ${colors.find(c => c.name === selectedColor)?.label} maintenant`}
+                      aria-label={`Commander ${quantity} Lumesilk IPL couleur ${colors.find(c => c.name === selectedColor)?.label} maintenant`}
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         Commander maintenant

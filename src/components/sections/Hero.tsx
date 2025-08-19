@@ -18,8 +18,8 @@ function Hero() {
   ];
 
   const productImages = useMemo(() => [
-    { src: "/ChatGPT Image Jul 21, 2025, 11_42_19 PM.png", alt: "SkinPetra IPL Lifestyle" },
-    { src: "/ChatGPT Image Jul 21, 2025, 11_44_21 PM.png", alt: "SkinPetra IPL Product" },
+    { src: "/ChatGPT Image Jul 21, 2025, 11_42_19 PM.png", alt: "Lumesilk IPL Lifestyle" },
+    { src: "/ChatGPT Image Jul 21, 2025, 11_44_21 PM.png", alt: "Lumesilk IPL Product" },
     { src: hero.img, alt: hero.imgAlt }
   ], []);
 
@@ -79,9 +79,9 @@ function Hero() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <span className="text-primary font-extrabold">SkinPetra IPL</span>
+                <span className="text-primary font-extrabold">Lumesilk IPL</span>
                 <br />
-                <span className="text-3xl sm:text-4xl lg:text-6xl font-light text-neutral-700 mt-2 block">
+                <span className="text-3xl sm:text-4xl lg:text-6xl font-normal text-neutral-700 mt-2 block">
                   Révolutionnaire
                 </span>
               </motion.h1>
@@ -89,7 +89,7 @@ function Hero() {
             
             <AnimatedSection delay={0.1}>
               <motion.p 
-                className="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0 font-light"
+                className="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed max-w-2xl mt-6 lg:mt-8 mx-auto lg:mx-0 font-normal"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.4 }}

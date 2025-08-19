@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
 
 :root {
   --background: #fafafa;
@@ -57,7 +57,7 @@
   --color-mocha: var(--mocha);
   --color-beige: var(--beige);
   --color-whats: var(--whats);
-  --font-sans: 'Inter', var(--font-geist-sans);
+  --font-sans: 'Lato', var(--font-geist-sans), system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   --font-serif: 'Playfair Display', serif;
   --font-mono: var(--font-geist-mono);
   --radius: 20px;
@@ -102,9 +102,24 @@ body {
 
 .heading {
   font-family: var(--font-serif);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.2;
+}
+
+/* Ensure main headings use Playfair Display 700 */
+h1,
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+/* Ensure body text uses Lato 400 by default */
+p {
+  font-family: var(--font-sans);
+  font-weight: 400;
 }
 
 .card-hover {

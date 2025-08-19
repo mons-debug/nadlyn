@@ -15,7 +15,7 @@ export default function BeforeAfter() {
               Des résultats <span className="text-gradient">visibles</span>
             </h2>
             <p className="text-xl text-secondary max-w-2xl mx-auto">
-              Découvrez les transformations réelles de nos clientes avec SkinPetra IPL.
+              Découvrez les transformations réelles de nos clientes avec Lumesilk IPL.
             </p>
           </div>
         </AnimatedSection>

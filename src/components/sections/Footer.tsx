@@ -29,13 +29,9 @@ export default function Footer() {
                 height={35}
                 className="h-10 w-auto filter brightness-0 invert"
               />
-              <span className="text-xl font-light text-gray-400">×</span>
-              <h3 className="text-3xl font-bold text-white">
-                SkinPetra IPL
-              </h3>
             </motion.div>
             
-            <p className="text-gray-300 mb-8 leading-relaxed max-w-md text-lg font-light">
+            <p className="text-gray-300 mb-8 leading-relaxed max-w-md text-lg font-normal">
               La révolution de l&apos;épilation à domicile. Une technologie professionnelle 
               pour des résultats durables, dans le confort de votre foyer.
             </p>

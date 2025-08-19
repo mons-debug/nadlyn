@@ -22,15 +22,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SkinPetra IPL - Épilation Définitive à Domicile | Nadlyn",
-  description: "Découvrez SkinPetra IPL, l'appareil d'épilation permanente révolutionnaire. Résultats visibles en 8 semaines, sans douleur, pour tous types de peau. Garantie satisfait ou remboursé 30 jours.",
-  keywords: "épilation IPL, épilation permanente, épilation maison, SkinPetra, Nadlyn, épilation laser",
+  title: "Lumesilk IPL - Épilation Définitive à Domicile | Nadlyn",
+  description: "Découvrez Lumesilk IPL, l'appareil d'épilation permanente révolutionnaire. Résultats visibles en 8 semaines, sans douleur, pour tous types de peau. Garantie satisfait ou remboursé 30 jours.",
+  keywords: "épilation IPL, épilation permanente, épilation maison, Lumesilk, Nadlyn, épilation laser",
   authors: [{ name: "Nadlyn" }],
   creator: "Nadlyn",
   publisher: "Nadlyn",
   robots: "index, follow",
   openGraph: {
-    title: "SkinPetra IPL - Épilation Définitive à Domicile",
+    title: "Lumesilk IPL - Épilation Définitive à Domicile",
     description: "La révolution de l'épilation permanente à domicile. Sans douleur, résultats en 8 semaines.",
     type: "website",
     locale: "fr_FR",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SkinPetra IPL - Épilation Définitive à Domicile",
+    title: "Lumesilk IPL - Épilation Définitive à Domicile",
     description: "La révolution de l'épilation permanente à domicile. Sans douleur, résultats en 8 semaines.",
   },
 };

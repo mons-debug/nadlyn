@@ -14,7 +14,7 @@ export default function SiteBanner() {
       <div className="container mx-auto flex items-center justify-center gap-2 text-sm md:text-base">
         <Megaphone size={18} className="flex-shrink-0 text-gold" />
         <p className="font-medium">
-          🎉 Offre limitée : <strong className="text-gold">-30%</strong> sur SkinPetra IPL + Livraison gratuite !
+          🎉 Offre limitée : <strong className="text-gold">-30%</strong> sur Lumesilk IPL + Livraison gratuite !
         </p>
       </div>
     </motion.div>

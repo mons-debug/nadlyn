@@ -141,7 +141,7 @@ function ComparisonSlide({ comparison }: { comparison: typeof comparisons[0] }) 
             </div>
             <Image
               src={comparison.before}
-              alt={`Avant traitement SkinPetra - ${comparison.title}`}
+              alt={`Avant traitement Lumesilk - ${comparison.title}`}
               fill
               className="object-cover rounded-lg"
               sizes="(max-width: 768px) 50vw, 33vw"
@@ -155,7 +155,7 @@ function ComparisonSlide({ comparison }: { comparison: typeof comparisons[0] }) 
             </div>
             <Image
               src={comparison.after}
-              alt={`Après traitement SkinPetra - ${comparison.title}`}
+              alt={`Après traitement Lumesilk - ${comparison.title}`}
               fill
               className="object-cover rounded-lg"
               sizes="(max-width: 768px) 50vw, 33vw"

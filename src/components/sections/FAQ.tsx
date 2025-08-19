@@ -61,7 +61,7 @@ function AccordionItem({ question, answer, isOpen, onToggle, index }: AccordionI
                 aria-labelledby={`faq-button-${index}`}
               >
                 <motion.div
-                  className="px-5 pb-4 lg:px-8 lg:pb-6 text-gray-700 leading-relaxed border-t border-primary/10 pt-4 lg:pt-6 font-light text-sm lg:text-base"
+                  className="px-5 pb-4 lg:px-8 lg:pb-6 text-gray-700 leading-relaxed border-t border-primary/10 pt-4 lg:pt-6 font-normal text-sm lg:text-base"
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -10, opacity: 0 }}
@@ -125,8 +125,8 @@ export default function FAQ() {
             <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 heading">
               Toutes vos <span className="text-gradient">questions</span>
             </h2>
-            <p className="text-base sm:text-lg lg:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed font-light">
-              Tout ce que vous devez savoir sur SkinPetra IPL avant votre achat
+            <p className="text-base sm:text-lg lg:text-2xl text-secondary max-w-3xl mx-auto leading-relaxed font-normal">
+              Tout ce que vous devez savoir sur Lumesilk IPL avant votre achat
             </p>
           </div>
         </AnimatedSection>
