@@ -34,7 +34,7 @@ export default function BeforeAfterSlider() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 id="results-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-gray-900">
+          <h2 id="results-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 heading">
             Des résultats <span className="text-primary">spectaculaires</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-800 max-w-2xl mx-auto leading-relaxed">

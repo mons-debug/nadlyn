@@ -116,7 +116,7 @@ export default function BodyZonesInteractive() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 id="zones-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-neutral-900 text-center lg:text-left">
+            <h2 id="zones-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 heading text-center lg:text-left">
               Zones de <span className="text-primary">traitement</span>
             </h2>
             <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed text-center lg:text-left">
