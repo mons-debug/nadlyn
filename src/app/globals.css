@@ -105,6 +105,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.2;
+  color: var(--black);
 }
 
 /* Ensure main headings use Playfair Display 700 */
@@ -114,6 +115,7 @@ h2 {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.2;
+  color: var(--black);
 }
 
 /* Ensure body text uses Lato 400 by default */

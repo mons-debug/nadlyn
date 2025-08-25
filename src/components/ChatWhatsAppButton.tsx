@@ -10,12 +10,12 @@ export default function ChatWhatsAppButton() {
       href={waLink()}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30"
+      className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 bg-[var(--whats)] hover:bg-[color-mix(in_oklab,var(--whats),black_10%)] text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-[color-mix(in_oklab,var(--whats),white_40%)]"
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
     >
       <span className="relative z-10 flex items-center justify-center gap-2">
-        <FaWhatsapp className="w-5 h-5" />
+        <FaWhatsapp className="w-5 h-5 text-white" />
         <span className="font-bold">Contacter sur WhatsApp</span>
         <motion.span
           className="inline-block"

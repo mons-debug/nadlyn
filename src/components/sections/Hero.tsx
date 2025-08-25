@@ -79,7 +79,7 @@ function Hero() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 style={{ willChange: 'transform, opacity' }}
               >
-                <span className="text-primary font-extrabold">Lumesilk IPL</span>
+                <span className="font-extrabold text-black">Lumesilk IPL</span>
                 <br />
                 <span className="text-3xl sm:text-4xl lg:text-6xl font-normal text-neutral-700 mt-2 block">
                   Révolutionnaire

@@ -24,13 +24,13 @@ export default function WhatsAppButton({
       href={waLink(color, quantity)}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30 ${className}`}
+      className={`group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 bg-[var(--whats)] hover:bg-[color-mix(in_oklab,var(--whats),black_10%)] text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-[color-mix(in_oklab,var(--whats),white_40%)] ${className}`}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       aria-label="Contacter par WhatsApp pour commander Lumesilk IPL"
     >
       <span className="relative z-10 flex items-center justify-center gap-2">
-        {showIcon && <FaWhatsapp className="w-5 h-5" />}
+        {showIcon && <FaWhatsapp className="w-5 h-5 text-white" />}
         <span className="font-bold">{children}</span>
         <motion.span
           className="inline-block"

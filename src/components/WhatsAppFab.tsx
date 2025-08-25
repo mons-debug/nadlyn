@@ -59,7 +59,7 @@ export default function WhatsAppFab() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 premium-gradient text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group focus:ring-4 focus:ring-primary/30"
+              className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-[var(--whats)] hover:bg-[color-mix(in_oklab,var(--whats),black_10%)] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group focus:ring-4 focus:ring-[color-mix(in_oklab,var(--whats),white_40%)]"
               onMouseEnter={() => setShowTooltip(true)}
               onMouseLeave={() => setShowTooltip(false)}
               whileHover={{ scale: 1.1 }}
@@ -67,7 +67,7 @@ export default function WhatsAppFab() {
             >
               {/* Background glow */}
               <motion.div
-                className="absolute inset-0 bg-primary/50 rounded-full blur-lg"
+                className="absolute inset-0 bg-[color-mix(in_oklab,var(--whats),white_30%)] rounded-full blur-lg"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 0.8, 0.5]
@@ -91,7 +91,7 @@ export default function WhatsAppFab() {
                   ease: "easeInOut",
                 }}
               >
-                <FaWhatsapp className="w-6 h-6 sm:w-7 sm:h-7" />
+                <FaWhatsapp className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
               </motion.div>
 
               {/* Shimmer effect */}
