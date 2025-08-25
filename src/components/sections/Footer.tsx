@@ -101,15 +101,19 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6">Support</h4>
             <ul className="space-y-3">
               {[
-                { text: "Conditions d'utilisation", href: "/conditions" },
-                { text: "Politique de confidentialité", href: "/confidentialite" },
-                { text: "Service client", href: "/support" }
+                { text: "Conditions d'utilisation", href: "/terms" },
+                { text: "Politique de confidentialité", href: "/privacy" },
+                { text: "Contact", href: "/contact" },
+                { text: "Service client", href: waLink() }
               ].map((link, index) => (
                 <motion.li key={index} whileHover={{ x: 4 }}>
                   <a 
                     href={link.href}
                     className="text-gray-300 hover:text-primary transition-colors"
-                    {...(link.href.startsWith('http') && { target: "_blank", rel: "noopener noreferrer" })}
+                    {...(link.href.startsWith('http') && { 
+                      target: "_blank", 
+                      rel: "noopener noreferrer" 
+                    })}
                   >
                     {link.text}
                   </a>
