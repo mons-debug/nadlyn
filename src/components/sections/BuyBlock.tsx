@@ -231,7 +231,7 @@ export default function BuyBlock() {
                       href={waLink(selectedColor, quantity)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 premium-gradient text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-primary/30"
+                      className="group flex-1 w-full sm:w-auto block text-center py-4 px-6 sm:px-8 bg-[var(--whats)] hover:bg-[color-mix(in_oklab,var(--whats),black_10%)] text-white font-bold text-base sm:text-lg rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden min-h-[48px] focus:ring-4 focus:ring-[color-mix(in_oklab,var(--whats),white_40%)]"
                       whileHover={{ scale: 1.01 }}
                       whileTap={{ scale: 0.99 }}
                       aria-label={`Commander ${quantity} Lumesilk IPL couleur ${colors.find(c => c.name === selectedColor)?.label} maintenant`}

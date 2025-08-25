@@ -11,7 +11,7 @@ export default function BeforeAfter() {
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 heading">
               Des résultats <span className="text-gradient">visibles</span>
             </h2>
             <p className="text-xl text-secondary max-w-2xl mx-auto">

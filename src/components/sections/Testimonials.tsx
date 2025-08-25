@@ -37,7 +37,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         <AnimatedSection>
           <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 text-neutral-900">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 heading">
               Ce que disent nos <span className="text-primary">clientes</span>
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-neutral-700 max-w-2xl mx-auto">
